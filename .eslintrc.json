@@ -44,5 +44,15 @@
     "space-in-parens": [ "warn", "never" ],
     "spaced-comment": [ "warn", "always" ],
     "space-unary-ops": [ "warn", { "words": true, "nonwords": false } ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [ "**/*.mjs" ],
+      "parserOptions": { "sourceType": "module" }
+    },
+    {
+      "files": [ "**/*.cjs" ],
+      "parserOptions": { "sourceType": "script" }
+    }
+  ]
 }
