@@ -1,27 +1,27 @@
 {
   "name": "@jessety/eslint-config",
-  "description": "ESLint Shareable Config - @jessety",
-  "author": "Jesse T Youngblood <jessetyoungblood@gmail.com> (http://jesseyoungblood.com)",
-  "version": "1.0.4",
-  "license": "MIT",
-  "main": "index.js",
-  "scripts": {},
-  "peerDependencies": {
-    "eslint": ">=5.9.0"
-  },
+  "version": "1.0.5",
+  "description": "ESLint config by @jessety",
   "keywords": [
     "eslint",
-    "eslintconfig",
+    "eslint-config",
     "lint",
     "linter",
     "linting"
   ],
+  "homepage": "https://github.com/jessety/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/jessety/eslint-config/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jessety/eslint-config.git"
   },
-  "bugs": {
-    "url": "https://github.com/jessety/eslint-config/issues"
-  },
-  "homepage": "https://github.com/jessety/eslint-config#readme"
+  "license": "MIT",
+  "author": "Jesse Youngblood <jessetyoungblood@gmail.com> (https://jesseyoungblood.com)",
+  "main": "index.js",
+  "scripts": {},
+  "peerDependencies": {
+    "eslint": ">=5.9.0"
+  }
 }
