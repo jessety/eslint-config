@@ -30,6 +30,7 @@
     "linebreak-style": [ "error", "unix" ],
     "no-eval": "error",
     "no-throw-literal": "error",
+    "require-atomic-updates": "off",
 
     "indent": [ "warn", 2, { "SwitchCase": 1 } ],
     "object-curly-spacing": [ "warn", "always", { "objectsInObjects": false, "arraysInObjects": false } ],
