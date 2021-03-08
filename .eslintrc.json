@@ -33,7 +33,7 @@
     "require-atomic-updates": "off",
 
     "indent": [ "warn", 2, { "SwitchCase": 1 } ],
-    "object-curly-spacing": [ "warn", "always", { "objectsInObjects": false, "arraysInObjects": false } ],
+    "object-curly-spacing": [ "warn", "always", { "objectsInObjects": true, "arraysInObjects": true } ],
     "prefer-destructuring": [ "warn", {
       "VariableDeclarator": { "array": true, "object": true },
       "AssignmentExpression": { "array": false, "object": false } } ],
