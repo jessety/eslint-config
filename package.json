@@ -17,6 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/jessety/eslint-config.git"
   },
+  "files": [
+    "index.js"
+  ],
   "license": "MIT",
   "author": "Jesse Youngblood <jessetyoungblood@gmail.com> (https://jesseyoungblood.com)",
   "main": "index.js",
