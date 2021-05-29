@@ -17,15 +17,16 @@
     "type": "git",
     "url": "git+https://github.com/jessety/eslint-config.git"
   },
-  "files": [
-    "index.js",
-    ".eslintrc.json"
-  ],
   "license": "MIT",
   "author": "Jesse Youngblood <jessetyoungblood@gmail.com> (https://jesseyoungblood.com)",
-  "main": "index.js",
+  "main": "base.js",
   "scripts": {},
   "peerDependencies": {
-    "eslint": ">=5.9.0"
+    "eslint": ">=5.9.0",
+    "typescript": ">=4.3.2"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": ">=4.25.0",
+    "@typescript-eslint/parser": ">=4.25.0"
   }
 }
