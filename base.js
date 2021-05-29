@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./typescript.eslintrc.json');
+module.exports = require('./base.eslintrc.json');
