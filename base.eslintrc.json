@@ -12,7 +12,8 @@
   "rules": {
     "no-console": "off",
     "strict": [ "error", "global" ],
-    "no-unused-vars": [ "error", { "args": "none" } ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [ "warn", { "args": "none" } ],
     "no-undef-init": "warn",
     "no-await-in-loop": "error",
     "no-bitwise": "warn",
