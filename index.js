@@ -8,8 +8,7 @@ module.exports = {
     },
     {
       files: ["**/*.{js,mjs,cjs}"],
-      extends: ['./javascript.js'],
-      parserOptions: { "sourceType": "script" }
+      extends: ['./javascript.js']
     },
     {
       files: ["**/*.test.{ts,js,cjs,mjs}"],
