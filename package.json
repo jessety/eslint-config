@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "author": "Jesse Youngblood <jessetyoungblood@gmail.com> (https://jesseyoungblood.com)",
-  "main": "base.js",
+  "main": "index.js",
   "scripts": {},
   "dependencies": {
     "@typescript-eslint/eslint-plugin": ">=4.25.0",

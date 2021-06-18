@@ -30,7 +30,7 @@ This package contains three sharable configurations: `base`, `strict`, and `java
 - `strict` - Stricter rules for TypeScript projects. Requires type checking. Slower than `base`.
 - `javascript` - ESLint rules for JavaScript projects
 
-As of version 2.x.x, `base` is the default export. To request one or the other, specify which in the `eslintrc` file. For example, a `.eslintrc.json` file that uses `strict` configuration may look like this:
+As of version 2.x.x, `base` is the default export for `.ts` files, and `javascript` is the default for `.js`, `.mjs`, or `.cjs` files. To request one or the other, specify which in the `eslintrc` file. For example, a `.eslintrc.json` file that uses `strict` configuration may look like this:
 
 ```json
 {
