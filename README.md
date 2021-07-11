@@ -20,7 +20,7 @@ For example, a valid `.eslintrc.json` file could be:
 }
 ```
 
-*The `eslint-config` suffix may be omitted because it is assumed by ESLint.*
+_The `eslint-config` suffix may be omitted because it is assumed by ESLint._
 
 ### Configurations
 

@@ -1,19 +1,19 @@
-'use strict'
+'use strict';
 
 module.exports = {
   overrides: [
     {
-      files: ["**/*.ts"],
+      files: ['**/*.ts'],
       extends: ['./base.js']
     },
     {
-      files: ["**/*.{js,mjs,cjs}"],
+      files: ['**/*.{js,mjs,cjs}'],
       extends: ['./javascript.js']
     },
     {
-      files: ["**/*.test.{ts,js,cjs,mjs}"],
-      env: { "jest": true },
-      rules: { "no-console": "warn" }
+      files: ['**/*.test.{ts,js,cjs,mjs}'],
+      env: { jest: true },
+      rules: { 'no-console': 'warn' }
     }
   ]
 };

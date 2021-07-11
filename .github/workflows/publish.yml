@@ -2,12 +2,11 @@ name: publish
 
 on:
   workflow_run:
-    workflows: ["release"]
+    workflows: ['release']
     types:
       - completed
 
 jobs:
-
   publish-npm:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +33,7 @@ jobs:
           node-version: 14.x
           registry-url: https://npm.pkg.github.com/
           always-auth: true
-          scope: "@jessety"
+          scope: '@jessety'
       - name: Publish
         run: npm publish
         env:

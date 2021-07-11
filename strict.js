@@ -1,8 +1,5 @@
-'use strict'
+'use strict';
 
 module.exports = {
-  'extends': [
-    './base.js',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking'
-  ]
-}
+  extends: ['./base.js', 'plugin:@typescript-eslint/recommended-requiring-type-checking']
+};
