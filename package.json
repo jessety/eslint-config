@@ -20,7 +20,9 @@
   "license": "MIT",
   "author": "Jesse Youngblood <jessetyoungblood@gmail.com> (https://jesseyoungblood.com)",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "format": "sort-package-json && prettier --write '**/*.{ts,js,json,yml,md}'"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": ">=4.25.0",
     "@typescript-eslint/parser": ">=4.25.0",
@@ -29,5 +31,9 @@
   "peerDependencies": {
     "eslint": ">=5.9.0",
     "typescript": ">=4.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2",
+    "sort-package-json": "^1.50.0"
   }
 }

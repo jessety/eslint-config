@@ -1,3 +1,4 @@
 .gitattributes
 .github
+.prettierrc.json
 RELEASE.md.hbs
