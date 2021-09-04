@@ -1,10 +1,14 @@
 # @jessety/eslint-config
 
-> Yet another ESLint [Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs.html) for TypeScript or JavaScript projects
+Yet another ESLint [Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs.html) for TypeScript or JavaScript projects.
+
+[![ci](https://github.com/jessety/eslint-config/workflows/ci/badge.svg)](https://github.com/jessety/eslint-config/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@jessety/eslint-config.svg)](https://www.npmjs.com/package/@jessety/eslint-config)
+[![license](https://img.shields.io/github/license/jessety/eslint-config.svg)](https://github.com/jessety/eslint-config/blob/main/LICENSE)
 
 ## Install
 
-```sh
+```shell script
 npm install --save-dev eslint @jessety/eslint-config
 ```
 

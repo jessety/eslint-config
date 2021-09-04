@@ -1,0 +1,113 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*' # Wait for push events with tags matching v*, e.g. v1.0, v20.15.10, v0.3.1
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      # Create cache identifier based only on dependency version numbers
+      - name: Determine dependencies
+        run: |
+          cat package.json | jq -c '{dependencies: .dependencies, peerDependencies: .peerDependencies, devDependencies: .devDependencies }' > dependencies.json
+          cat dependencies.json | jq
+
+      - name: Load dependency cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('dependencies.json') }} # This is a package, so there aren't any lockfiles to hash
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit
+
+      - name: Test
+        run: npm run test
+
+  publish-npm:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish
+        run: npm publish --ignore-scripts --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-gpr:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: https://npm.pkg.github.com/
+          always-auth: true
+          scope: '@jessety'
+
+      - name: Publish
+        run: npm publish --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions
+
+  release:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    needs: ['publish-gpr', 'publish-npm']
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Git history won't be fetched without this option
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+
+      - name: Generate release notes # To change the release notes format, edit RELEASE.md.hbs
+        id: notes
+        run: |
+          npx auto-changelog@2.x.x --template RELEASE.md.hbs --output RELEASE.md --commit-limit false
+          NOTES=$(cat RELEASE.md)
+          NOTES="${NOTES//'%'/'%25'}"
+          NOTES="${NOTES//$'\n'/'%0A'}"
+          echo "::set-output name=notes::$NOTES"
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: ${{ steps.notes.outputs.notes }}
+          draft: false
+          prerelease: false

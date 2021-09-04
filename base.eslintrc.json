@@ -33,11 +33,7 @@
     "require-atomic-updates": "off",
 
     "indent": ["warn", 2, { "SwitchCase": 1 }],
-    "object-curly-spacing": [
-      "warn",
-      "always",
-      { "objectsInObjects": true, "arraysInObjects": true }
-    ],
+    "object-curly-spacing": ["warn", "always", { "objectsInObjects": true, "arraysInObjects": true }],
     "prefer-destructuring": [
       "warn",
       {
@@ -49,24 +45,14 @@
     "no-trailing-spaces": "warn",
     "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
     "keyword-spacing": ["warn", { "before": true }],
-    "space-before-function-paren": [
-      "warn",
-      { "anonymous": "never", "named": "never", "asyncArrow": "always" }
-    ],
+    "space-before-function-paren": ["warn", { "anonymous": "never", "named": "never", "asyncArrow": "always" }],
     "space-in-parens": ["warn", "never"],
     "spaced-comment": ["warn", "always"],
     "space-unary-ops": ["warn", { "words": true, "nonwords": false }],
     "import/order": [
       "warn",
       {
-        "groups": [
-          ["external", "type"],
-          "internal",
-          "index",
-          ["parent", "sibling"],
-          "builtin",
-          "object"
-        ],
+        "groups": [["external", "type"], "internal", "index", ["parent", "sibling"], "builtin", "object"],
         "newlines-between": "never",
         "alphabetize": {
           "order": "asc",
