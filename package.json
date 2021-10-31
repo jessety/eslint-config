@@ -22,22 +22,22 @@
   "main": ".eslintrc.js",
   "scripts": {
     "format": "sort-package-json && prettier --write '**/*.{ts,js,json,yml,md}' && eslint --fix .",
-    "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": ">=4.25.0",
-    "@typescript-eslint/parser": ">=4.25.0",
-    "eslint-plugin-import": ">=2.23.4"
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint-plugin-import": "^2.25.2"
   },
   "devDependencies": {
-    "@jessety/prettier-config": "^1.0.0",
+    "@jessety/prettier-config": "^1.1.0",
     "eslint": "^7.32.0",
-    "husky": "^7.0.0",
-    "jest": "^27.1.0",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
-    "sort-package-json": "^1.50.0"
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
+    "sort-package-json": "^1.52.0"
   },
   "peerDependencies": {
     "eslint": ">=5.9.0",
