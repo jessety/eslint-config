@@ -5,6 +5,7 @@ describe('Exports', () => {
     expect(() => require('..')).not.toThrow();
   });
 
+  /*
   test('base configuration', () => {
     expect(() => require('../base')).not.toThrow();
   });
@@ -16,4 +17,5 @@ describe('Exports', () => {
   test('javascript configuration', () => {
     expect(() => require('../javascript')).not.toThrow();
   });
+  */
 });
