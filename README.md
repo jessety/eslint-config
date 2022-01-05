@@ -28,17 +28,35 @@ _The `eslint-config` suffix may be omitted because it is assumed by ESLint._
 
 ### Configurations
 
-This package contains three sharable configurations: `base`, `strict`, and `javascript`.
+This package contains the following sharable configurations:
 
-- `base` - core rules for TypeScript projects. Does not require TypeScript build. Fast.
-- `strict` - Stricter rules for TypeScript projects. Requires type checking. Slower than `base`.
+- `base` - Core rules for TypeScript node projects. Does not require TypeScript build. Fast.
+- `strict` - Stricter rules for TypeScript node projects. Requires type checking. Slower than `base`.
+- `react` - Rules for a React project
 - `javascript` - ESLint rules for JavaScript projects
 
-As of version 2.x.x, `base` is the default export for `.ts` files, and `javascript` is the default for `.js`, `.mjs`, or `.cjs` files. To request one or the other, specify which in the `eslintrc` file. For example, a `.eslintrc.json` file that uses `strict` configuration may look like this:
+As of version 2.x.x, `base` is the default export for `.ts` files, and `javascript` is the default for `.js`, `.mjs`, or `.cjs` files. To request one or the other, specify which in the `eslintrc` file. For example, a `.eslintrc.json` file that uses `react` configuration may look like this:
 
 ```json
 {
-  "extends": "@jessety/eslint-config/strict"
+  "extends": "@jessety/eslint-config/react"
+}
+```
+
+A project that uses a mix of both TypeScript and JavaScript may look like this:
+
+```json
+{
+  "overrides": [
+    {
+      "files": ["**/*.ts"],
+      "extends": "@jessety"
+    },
+    {
+      "files": ["**/*.{js,cjs,mjs}"],
+      "extends": "@jessety/eslint-config/javascript"
+    }
+  ]
 }
 ```
 
