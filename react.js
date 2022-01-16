@@ -5,7 +5,7 @@ require(`./patch`);
 module.exports = {
   env: {
     browser: true,
-    es2020: true
+    es2020: true,
   },
   extends: ['./base.js'],
   parser: '@typescript-eslint/parser',
@@ -14,13 +14,13 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 11,
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   settings: {
     react: {
       pragma: 'React',
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 };

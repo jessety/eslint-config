@@ -21,7 +21,7 @@
   "author": "Jesse Youngblood <jessetyoungblood@gmail.com> (https://jesseyoungblood.com)",
   "main": ".eslintrc.js",
   "scripts": {
-    "format": "sort-package-json && prettier --write '**/*.{ts,js,json,yml,md}' && eslint --fix .",
+    "format": "sort-package-json && eslint --fix . && prettier --write '**/*.{js,json,yml,md}'",
     "lint": "eslint .",
     "prepare": "husky install",
     "test": "jest"
@@ -34,11 +34,11 @@
     "eslint-plugin-react": "^7.28.0"
   },
   "devDependencies": {
-    "@jessety/prettier-config": "^1.1.0",
+    "@jessety/prettier-config": "^1.2.0",
     "eslint": "^8.6.0",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
-    "lint-staged": "^11.2.6",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.4.1",
     "sort-package-json": "^1.52.0"
   },

@@ -19,13 +19,17 @@
     "no-extend-native": "error",
     "no-useless-escape": "error",
     "semi": "warn",
-    "comma-dangle": "warn",
+    "comma-dangle": ["warn", "always-multiline"],
     "prefer-template": "warn",
     "template-curly-spacing": ["warn", "never"],
     "one-var": ["warn", "never"],
     "no-var": "warn",
     "prefer-const": ["warn", { "destructuring": "all" }],
-    "operator-linebreak": ["error", "before"],
+    "operator-linebreak": [
+      "warn",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
     "quote-props": ["warn", "as-needed"],
     "linebreak-style": ["error", "unix"],
     "no-eval": "error",
@@ -47,11 +51,15 @@
     ],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
     "no-trailing-spaces": "warn",
-    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+    "quotes": [
+      "warn",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ],
     "keyword-spacing": ["warn", { "before": true }],
     "space-before-function-paren": [
       "warn",
-      { "anonymous": "never", "named": "never", "asyncArrow": "always" }
+      { "anonymous": "always", "named": "never", "asyncArrow": "always" }
     ],
     "space-in-parens": ["warn", "never"],
     "spaced-comment": ["warn", "always"],
@@ -60,10 +68,9 @@
       "warn",
       {
         "groups": [
-          ["external", "type"],
+          "external",
           "internal",
-          "index",
-          ["parent", "sibling"],
+          ["parent", "sibling", "index"],
           "builtin",
           "object"
         ],
@@ -73,6 +80,12 @@
           "caseInsensitive": true
         }
       }
+    ],
+    "import/no-default-export": "warn",
+    "lines-between-class-members": [
+      "warn",
+      "always",
+      { "exceptAfterSingleLine": true }
     ]
   },
   "overrides": [
