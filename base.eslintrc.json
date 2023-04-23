@@ -63,10 +63,11 @@
         "groups": [
           "external",
           "internal",
-          ["parent", "sibling", "index"],
+          ["internal", "parent", "sibling", "index"],
           "builtin",
           "object"
         ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
         "newlines-between": "never",
         "alphabetize": {
           "order": "asc",
